@@ -1,7 +1,6 @@
 // Working on projecteuler.com question 708.
 // URL: https://projecteuler.net/problem=708
 
-
 #include <iostream>
 #include <vector>
 #include <numeric>
@@ -10,6 +9,7 @@ using uint = std::uint64_t;
 using ivec = std::vector<uint>;
 const char nl = '\n';
 const uint zero = 0;
+const uint uone = 1;
 const uint utwo = 2;
 
 
@@ -51,31 +51,52 @@ uint f(uint n) {
 }
 
 uint S(uint N) {
-    ivec vN{N + 1};
+    ivec vN;
+    vN.reserve(N + uone);
     
-    uint f_res = 0;
-    uint tmp;
+    uint f_res = zero;
 
-    std::iota(std::begin(vN), std::end(vN), 1);
-    
+    std::iota(std::begin(vN), std::end(vN), uone);
+
     for (auto &x : vN) {
-        tmp = f(x);
-        f_res += tmp;
+        uint tmp = f(x);
+        if (tmp > 0) {
+            f_res += tmp;
+        }
     }
 
     return f_res;
 
 }
 
-
+// void Testf();
+void TestS();
 int main() {
 
-    uint testN = 1000;
+    // uint testN = 1000;
+    // uint result;
+
+    // result = S(testN);
+    // std::cout << "The result of S(N) with an N value of " << testN << " is: " << result << nl;
+
+    // Testf();
+    TestS();
+
+    return 0;
+}
+
+void Testf() {
+    uint n1 = 90;
     uint result;
+    result = f(n1);
+    std::cout << "The result of f(n) with n of " << n1 << " is: " << result << nl;
+}
 
-    result = S(testN);
-    std::cout << "The result of S(N) with an N value of " << testN << " is: " << result << nl;
-
+void TestS() {
+    uint n1 = 90;
+    uint result;
+    result = S(n1);
+    std::cout << "The result of S(N) with n of " << n1 << " is: " << result << nl;
 }
 
 
