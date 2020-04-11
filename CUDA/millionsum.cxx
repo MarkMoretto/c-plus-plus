@@ -6,10 +6,9 @@
 */
 
 #include <iostream>
-#include <math.h>
-#include <vector>
-#include <numeric>
-#include <iomanip> // std::setprecision
+#include <math.h>   // fabs, fmax
+#include <vector>   // std::vector
+#include <numeric>  // std::accumulate
 
 using fvec = std::vector<float>;
 const char nl = '\n';
@@ -39,7 +38,7 @@ int main() {
     float x = 1.0f;
     float y = 2.0f;
 
-    // Making pointers because I need the practice.
+    // Making pointers because why not.
     float * xp = &x;
     float * yp = &y;
     
@@ -56,6 +55,7 @@ int main() {
 
     // Check for any errors
     float err_ = error_check(resV);
+    std::cout.precision(10);
     std::cout << "Max error found: " << err_ << nl;
 
     return 0;
