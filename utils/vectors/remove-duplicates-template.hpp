@@ -18,10 +18,10 @@ void remove_duplicates(T& v) {
     std::sort(v.begin(), v.end());
 
     // Reduce duplicates
-    auto uniq = std::unique(v.begin(), v.end());
+    auto uniqs = std::unique(v.begin(), v.end());
 
     // Remove allocated space from the resulting vector, if any.
-    v.erase(uniq, v.end());
+    v.erase(uniqs, v.end());
 }
 
 
