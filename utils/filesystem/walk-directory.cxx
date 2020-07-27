@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
 
         // Write output to programming/Cpp/file-system directory
         // This function comes from `utils.hxx`
-        output_path = "S:\\OFP\\Analytics\\Population Management\\Mark M\\Programming\\Cpp\\file-system\\walkdir-test.txt";
+        output_path = "S:\\path\\to\\my-file.txt";
         WriteResults(output_path, results_vec);
 
 
