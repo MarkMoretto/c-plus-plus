@@ -43,9 +43,6 @@ int main(int argc, char *argv[]) {
 
     std::vector<std::string> vec_files;
     std::vector<std::string> vec_filelines;
-    // std::string test_folder = "S:\\OFP\\Analytics\\Population Management\\Mark M\\Gaps_Loading\\Table_Queries";
-    // std::string search_term = "MMorett1"; // This should be a command line argument.
-    // std::string input_extension = "sql";
     std::string search_term;
     std::string input_extension;
     std::string file_extension;
@@ -131,8 +128,8 @@ int main(int argc, char *argv[]) {
         // Write output to programming/Cpp/file-system directory
         // This function comes from `utils.hxx`
         if (vec_filelines.size() > 0) {
-            std::string filename = "FileScanner-results.txt";
-            std::string output_path = "S:\\OFP\\Analytics\\Population Management\\Mark M\\Programming\\Cpp\\file-system\\" + filename;
+            std::string filename = "my-file.txt";
+            std::string output_path = "C:\\path\\to\\folder\\" + filename;
             WriteResults(output_path, vec_filelines);        
         }
         return 0;
