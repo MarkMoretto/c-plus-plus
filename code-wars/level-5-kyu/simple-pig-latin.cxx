@@ -120,11 +120,6 @@ int main() {
         std::cout << res << std::endl;
     }
 
-    // S res = pig_it(s1);
-    // std::cout << res << std::endl;
-
-
-    
     return 0;
 
 }
