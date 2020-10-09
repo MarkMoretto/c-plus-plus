@@ -13,6 +13,9 @@ Compilation -
 #include <vector>
 #include <regex>
 
+// #define NDEBUG
+#include <cassert> // Simple testing
+#define assertm(exp, msg)
 
 using S = std::string;
 using svec = std::vector<S>;
@@ -85,6 +88,20 @@ std::string pig_it(std::string str) {
     return rtrim(output);
 }
 
+/**
+ * Assertions.
+*/
+void tests(svec vec) {
+    int i = 0;
+    svec vexpected{"isTay siay ymay tringsay","igPay atinlay siay oolcay","ctaAay steay abulafay","elloHay orldway !"};
+
+    while (i < (int)vec.size()) {
+        S result = pig_it(vec[i]);
+        assertm(vexpected[i] == result, "assertion error for test #" + i);
+        ++i;
+    }
+}
+
 
 int main() {
     // Test phrases.
@@ -95,6 +112,9 @@ int main() {
 
     svec samples{s1, s2, s3, s4};
 
+    // Test sample values where we know the expected outcome.
+    tests(samples);
+    
     for (S el : samples) {
         S res = pig_it(el);
         std::cout << res << std::endl;
