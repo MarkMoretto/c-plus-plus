@@ -1,4 +1,4 @@
-# Quick Subrepo for Eigen3 Learnin' and Practice
+# Eigen3 Examples and Tutorials
 
 Basic PowerShell compilation:
 
